@@ -10,16 +10,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-    
-      - name: Install Ruby
+
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-    
+
       - name: Install Neocities CLI
         run: gem install neocities
-    
+
       - name: Deploy to Neocities
-        run: neocities push .
+        run: neocities push deploy/
         env:
           NEOCITIES_API_KEY: ${{ secrets.NEOCITIES_API_KEY }}
