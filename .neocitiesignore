@@ -1,0 +1,6 @@
+.github/
+.git/
+docs/logs/
+*.psd
+*.mov
+*.zip
