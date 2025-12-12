@@ -142,7 +142,6 @@ header {
 
 .logs {
   width: 28.6em;
-
 }
 
 details {
@@ -194,6 +193,10 @@ section {
   font-size: .8em;
   line-height: 1.7em;
   background-color: whitesmoke;
+}
+
+section > cite{
+  line-height: 5em;
 }
 
 section li {
@@ -278,17 +281,6 @@ h4 {
 .doll{
   padding-top: 5em;
   width: 4em;
-}
-
-/*FOOTER*/
-footer.homepage{
-  background-image: url("../images/gifs/starborder.gif");
-    background-repeat: repeat;
-    width: 33.85em;
-    margin: .2em auto .2em auto;
-    height: .4em;
-    background-color: white;
-    height: 1em;
 }
 
 /*GALLERY PAGES*/
