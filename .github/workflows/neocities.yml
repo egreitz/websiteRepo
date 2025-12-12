@@ -1,0 +1,16 @@
+name: Deploy to neocities
+on:
+  push:
+    branches:
+      - main # Change to your branch name if different
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy to neocities
+        uses: bcomnes/deploy-to-neocities@v1 # Use a specific version, e.g., @v1.1.9
+        with:
+          api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
+          cleanup: false
+          dist_dir: websiteRepo # Folder containing your website files
