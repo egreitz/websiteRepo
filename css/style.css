@@ -31,7 +31,7 @@ header {
 /*HOMEPAGE*/
 .wrap {
   display: grid;
-  grid-template-columns: 9em 40em 9.5em;
+  grid-template-columns: 9em 40em 10em;
   grid-template-rows: 2em .7em 12.3em 0em 20em 0em;
   border-style: groove;
   border-width: .5em;
@@ -97,7 +97,6 @@ header {
   background-color: whitesmoke;
   border-top: groove;
   border-left: groove;
-  overflow: scroll;
   font-family: "Outfit", sans-serif;
   font-size: .8em;
   color: black;
