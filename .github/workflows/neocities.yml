@@ -1,3 +1,4 @@
+# .github/workflows/deploy.yml
 name: Deploy to Neocities
 
 on:
@@ -9,18 +10,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
       - uses: actions/checkout@v4
-        name: Ensure curl is installed
-        run: sudo apt0get updae && sudo apt-get install -y curl
-        name: Deploy to Neocities
+      - name: Install Ruby CLI
+        run: sudo gem install neocities
+      - name: Deploy to Neocities
         env:
+          NEOCITIES_USERNAME: yourusername
           NEOCITIES_API_KEY: ${{ secrets.NEOCITIES_API_KEY }}
-          NEOCITIES_USERNAME: genossin
         run: |
-          echo "uploading files to Neocities..."
-          curl -u "$NEOCITIES_USERNAME:$NEOCITIES_API_KEY" \
-            -F "log/index.html=@log/index.html" \
-            -F "logs/log.hmtl=@logs/log.html" \
-            -F "css/style.css=@css/style.css" \
-            htps://neocities.org/api/upload
+          neocities push ./ --ignore-file .neocitiesignore --verbose
