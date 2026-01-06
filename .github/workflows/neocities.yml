@@ -2,24 +2,15 @@ name: Deploy to Neocities
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   deploy:
-    runs-on: windows-latest
-
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.2'
-
-      - name: Install Neocities CLI
-        run: gem install neocities
-
+      - uses: actions/checkout@v3
       - name: Deploy to Neocities
-        run: neocities push ./ --ignore-file .neocitiesignore
-        env:
-          NEOCITIES_API_KEY: ${{ secrets.e779951735497f22fe757a473e7f8720 }}
+        uses: neocities/action@v1
+        with:
+          api_key: ${{ secrets.NEOCITIES_API_KEY }}
