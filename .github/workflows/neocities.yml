@@ -22,4 +22,4 @@ jobs:
       - name: Deploy to Neocities
         run: neocities push ./ --ignore-file .neocitiesignore
         env:
-          NEOCITIES_API_KEY: ${{ secrets.NEOCITIES_API_KEY }}
+          NEOCITIES_API_KEY: ${{ secrets.e779951735497f22fe757a473e7f8720 }}
